@@ -1,0 +1,5 @@
+.DS_Store
+
+# The shop's own photos, pulled from Booksy's CDN by fetch-assets.sh.
+# Not ours to redistribute — kept out of git until Dope Fades gives permission.
+assets/

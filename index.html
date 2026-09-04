@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SPEC PITCH — NOT AUTHORISED, NOT DEPLOYED.
+  Built 2026-09-03 from the public Booksy listing for DOPE FADES. The shop has
+  not engaged BIYISANDBOX STUDIOS. Photos are the shop's own, pulled from
+  Booksy's CDN for this mockup only.
+
+  BEFORE THIS GOES ANYWHERE PUBLIC:
+    1. Get written permission to use the photos.
+    2. Get a real phone number — Booksy does not publish one, so every CTA
+       here points at their Booksy booking page. Do not invent one.
+    3. Confirm prices; Booksy pricing drifts and is per-staffer.
+  See README.md.
+-->
+<title>DOPE FADES — Barbershop &amp; Braids | Woodbridge, Vaughan</title>
+<meta name="description" content="DOPE FADES barbershop at 5308 Hwy 7 #4, Woodbridge, Vaughan. Fades, line-ups, kids cuts, cornrows, locs and extensions. 4.9 stars from 453 reviews. Book online.">
+<meta property="og:title" content="DOPE FADES — Barbershop &amp; Braids, Woodbridge">
+<meta property="og:description" content="The art of hair, literally. Fades, line-ups, cornrows, locs and extensions in Woodbridge, Vaughan.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#0d0c0b; --panel:#161412; --accent:#d9a441; --accent-dim:#8a6a29;
+    --paper:#f7f4ef; --muted:#a49b8e; --muted-dark:#6b645c; --line:#2a2622;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Helvetica Neue",Segoe UI,Arial,sans-serif;color:var(--paper);background:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* nav */
+  nav{position:sticky;top:0;background:rgba(13,12,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:20}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1080px;margin:0 auto}
+  .logo{font-weight:900;letter-spacing:.16em;font-size:15px;text-transform:uppercase}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;font-size:14px;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:600;color:var(--paper)}
+  .nav-links a:hover{color:var(--accent)}
+  .book-btn{background:var(--accent);color:var(--ink) !important;padding:10px 20px;border-radius:999px;font-weight:800}
+  .book-btn:hover{background:#fff;color:var(--ink)!important}
+  @media(max-width:700px){.nav-links a:not(.book-btn){display:none}}
+
+  /* hero */
+  header{position:relative;padding:96px 0 84px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-bg{position:absolute;inset:0;z-index:0;
+    background-image:linear-gradient(100deg,rgba(13,12,11,.95) 32%,rgba(13,12,11,.55) 100%),url("assets/hero.jpeg");
+    background-size:cover;background-position:center;
+    background-color:#1b1714}
+  header .wrap{position:relative;z-index:1}
+  .kicker{color:var(--accent);font-weight:800;letter-spacing:.24em;font-size:12px;text-transform:uppercase}
+  h1{font-size:clamp(42px,7.4vw,78px);line-height:1;font-weight:900;letter-spacing:-.025em;margin:16px 0 18px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:530px}
+  .cta-row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 30px;border-radius:999px;font-weight:800;text-decoration:none;font-size:16px}
+  .btn-primary{background:var(--accent);color:var(--ink)}
+  .btn-primary:hover{background:#fff}
+  .btn-ghost{border:2px solid var(--muted-dark);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .rating{margin-top:28px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .rating b{color:var(--paper)}
+  .stars{color:var(--accent);letter-spacing:2px}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+  /* sections */
+  section{padding:76px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(27px,4vw,38px);font-weight:900;letter-spacing:-.015em;margin-bottom:10px}
+  .lead{color:var(--muted);margin-bottom:38px;max-width:580px}
+  .sec-tag{color:var(--accent);font-weight:800;letter-spacing:.2em;font-size:11px;text-transform:uppercase;margin-bottom:10px}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;transition:border-color .15s}
+  .card:hover{border-color:var(--accent-dim)}
+  .card h3{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:16px;margin-bottom:6px;font-weight:800}
+  .price{color:var(--accent);font-weight:900;font-size:18px;white-space:nowrap}
+  .card p{font-size:14px;color:var(--muted)}
+  .dur{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted-dark);letter-spacing:.06em;text-transform:uppercase}
+  .note{margin-top:26px;font-size:13px;color:var(--muted-dark)}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .gallery img,.gallery .ph{aspect-ratio:1;object-fit:cover;border-radius:12px;background:linear-gradient(135deg,#2b2723,#161412);border:1px solid var(--line)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  @media(max-width:780px){.about-grid{grid-template-columns:1fr}}
+  .shot{aspect-ratio:4/3;border-radius:16px;object-fit:cover;width:100%;
+    background:linear-gradient(135deg,#2b2723,#0d0c0b);border:1px solid var(--line)}
+  .team{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .team span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;letter-spacing:.04em}
+
+  /* hours */
+  .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  @media(max-width:780px){.hours-grid{grid-template-columns:1fr}}
+  .hours{width:100%;border-collapse:collapse;font-size:15px}
+  .hours td{padding:11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .hours td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .hours .split{display:block;font-size:13px;color:var(--muted);font-weight:600}
+  .amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .amen span{border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;color:var(--muted)}
+  address{font-style:normal;font-size:17px;line-height:1.5;margin-bottom:6px}
+
+  /* final */
+  .final{background:var(--accent);color:var(--ink);text-align:center;border-top:none}
+  .final h2,.final .lead{color:var(--ink)}
+  .final .lead{margin:10px auto 30px;opacity:.8}
+  .final .btn-primary{background:var(--ink);color:var(--accent)}
+  .final .btn-primary:hover{background:#fff;color:var(--ink)}
+
+  footer{padding:30px 0;font-size:13px;color:var(--muted-dark);text-align:center;border-top:1px solid var(--line)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">DOPE <span>FADES</span></div>
+    <div class="nav-links">
+      <a href="#services">Cuts</a>
+      <a href="#braids">Braids &amp; Locs</a>
+      <a href="#hours">Hours</a>
+      <a class="book-btn" href="https://booksy.com/en-ca/4367_dope-fades_barbershop_958511_woodbridge" target="_blank" rel="noopener">Book now</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="kicker">Woodbridge · Vaughan</div>
+    <h1>The art of hair.<br><em>Literally.</em></h1>
+    <p class="sub">If you cherish your look and value your time — fades, line-ups, cornrows, locs and extensions from a chair that runs on schedule.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://booksy.com/en-ca/4367_dope-fades_barbershop_958511_woodbridge" target="_blank" rel="noopener">Book on Booksy</a>
+      <a class="btn btn-ghost" href="#services">See prices</a>
+    </div>
+    <p class="rating">
+      <span class="stars">★★★★★</span> <b>4.9</b> · 453 reviews
+      <span class="pill">Mobile service</span>
+      <span class="pill">Walk-ins by availability</span>
+    </p>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <p class="sec-tag">Barbering</p>
+    <h2>Cuts &amp; line-ups</h2>
+    <p class="lead">Prices vary slightly by barber. Book the chair you want on Booksy — Ola, Amara, Yunus, Thomas or Ajay.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Dope Fade — Full <span class="price">$79.99</span></h3>
+        <p>Full haircut including beard work, hot towel, enhancement and razor work.</p>
+        <span class="dur">1 hr</span>
+      </div>
+      <div class="card">
+        <h3>Dope Fade <span class="price">$49.99+</span></h3>
+        <p>The signature cut. Clean fade, sharp finish.</p>
+        <span class="dur">1 hr</span>
+      </div>
+      <div class="card">
+        <h3>Line Up <span class="price">$30+</span></h3>
+        <p>Crispy line up with enhancement and razor work.</p>
+        <span class="dur">30 min</span>
+      </div>
+      <div class="card">
+        <h3>Kids Dope Fade <span class="price">$39.99</span></h3>
+        <p>Same precision, patient chair. Child-friendly shop.</p>
+        <span class="dur">1 hr</span>
+      </div>
+    </div>
+    <p class="note">Card, cash or tap. Loyalty program available in-shop.</p>
+  </div>
+</section>
+
+<section id="braids">
+  <div class="wrap">
+    <p class="sec-tag">With Shin</p>
+    <h2>Braids, locs &amp; extensions</h2>
+    <p class="lead">Protective styling, natural hair care and extensions — for men and women. Prices start where listed and scale with length, size and density.</p>
+    <div class="grid">
+      <div class="card"><h3>Cornrows (1–4) <span class="price">$60</span></h3><p>Straight cornrows, no design.</p><span class="dur">45 min</span></div>
+      <div class="card"><h3>Cornrows (5–10) <span class="price">$80</span></h3><p>Straight, wavy or zigzag parts.</p><span class="dur">1 hr 45</span></div>
+      <div class="card"><h3>Cornrows 10+ <span class="price">$100</span></h3><p>Full head, finer parts.</p><span class="dur">2 hr</span></div>
+      <div class="card"><h3>Designer Cornrows <span class="price">$100+</span></h3><p>Custom patterns and designs.</p><span class="dur">2 hr</span></div>
+      <div class="card"><h3>Retwist — Full Head <span class="price">$150</span></h3><p>Dreadlock retwist.</p><span class="dur">2 hr</span></div>
+      <div class="card"><h3>Retwist — Half Head <span class="price">$120</span></h3><p>Dreadlock retwist.</p><span class="dur">1 hr 15</span></div>
+      <div class="card"><h3>Interlocking — Full <span class="price">$200</span></h3><p>Full head interlocking.</p><span class="dur">2 hr 30</span></div>
+      <div class="card"><h3>Interlocking — Half <span class="price">$150</span></h3><p>Half head interlocking.</p><span class="dur">1 hr 30</span></div>
+      <div class="card"><h3>Comb Coil Starter Locs <span class="price">$180+</span></h3><p>Wash, clean parts, coils and basic styling. Best for short to medium hair.</p><span class="dur">3 hr</span></div>
+      <div class="card"><h3>Miracle Knots <span class="price">$200+</span></h3><p>Seamless protective extensions. From 2 bundles; +$40 per extra bundle, +$30 extra length. Hair not included.</p><span class="dur">3 hr</span></div>
+      <div class="card"><h3>Men's Invisible Locs <span class="price">$120+</span></h3><p>Natural-looking loc extensions.</p><span class="dur">2 hr</span></div>
+      <div class="card"><h3>Men's Extension Cornrows (4–8) <span class="price">$100+</span></h3><p>Hair included.</p><span class="dur">2 hr 30</span></div>
+      <div class="card"><h3>Men's Natural Twist Extensions <span class="price">$170</span></h3><p>Tuesday to Thursday only.</p><span class="dur">3 hr</span></div>
+      <div class="card"><h3>Box Braids / 2-Strand — Large <span class="price">$70</span></h3><p>Half head $70, full head $80+.</p><span class="dur">1 hr 30</span></div>
+      <div class="card"><h3>Box Braids / 2-Strand — Medium <span class="price">$85</span></h3><p>Finer sections.</p><span class="dur">1 hr 45</span></div>
+      <div class="card"><h3>Box Braids / 2-Strand — Small <span class="price">$100</span></h3><p>Finest sections.</p><span class="dur">2 hr</span></div>
+      <div class="card"><h3>Barrel Twist <span class="price">$150</span></h3><p>Full styling.</p><span class="dur">3 hr</span></div>
+      <div class="card"><h3>Wig Customization <span class="price">$80</span></h3><p>Wash, pluck, bleach knots and style. Installation not included.</p><span class="dur">1 hr 30</span></div>
+      <div class="card"><h3>Wig Installation <span class="price">$120</span></h3><p>Full install.</p><span class="dur">2 hr 30</span></div>
+      <div class="card"><h3>Open, Wash &amp; Blow <span class="price">$50</span></h3><p>Take-down, wash and blow-dry.</p><span class="dur">1 hr</span></div>
+      <div class="card"><h3>Wash &amp; Blow <span class="price">$30</span></h3><p>Wash and blow-dry.</p><span class="dur">30 min</span></div>
+      <div class="card"><h3>Hair Dye (Black) <span class="price">$60</span></h3><p>Full colour.</p><span class="dur">1 hr 45</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="sec-tag">Recent work</p>
+    <h2>Straight from the chair</h2>
+    <p class="lead">A few from the shop. Full gallery on Instagram.</p>
+    <div class="gallery">
+      <img src="assets/work-01.jpeg" alt="Fade by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-02.jpeg" alt="Line up by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-03.jpeg" alt="Cornrows by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-04.jpeg" alt="Locs by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-05.jpeg" alt="Braids by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-06.jpeg" alt="Haircut by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-07.jpeg" alt="Styling by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-08.jpeg" alt="Twists by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+    </div>
+    <p class="note"><a href="https://www.instagram.com/hairbydope_/" target="_blank" rel="noopener">@hairbydope_ on Instagram →</a></p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="sec-tag">The shop</p>
+      <h2>If you cherish your look, value your time</h2>
+      <p class="lead" style="margin-bottom:16px">Dope Fades is a full-service shop on Highway 7 in Woodbridge — barbering on one side, braiding and loc work on the other. Six people in the rotation, every one of them booked by name.</p>
+      <p style="color:var(--muted);font-size:15px">4.9 stars across 453 reviews. Mobile service available on request.</p>
+      <div class="team">
+        <span>OLA</span><span>AMARA</span><span>SHIN</span><span>YUNUS</span><span>THOMAS</span><span>AJAY</span>
+      </div>
+    </div>
+    <img class="shot" src="assets/shop.jpeg" alt="Inside Dope Fades barbershop" loading="lazy" onerror="this.style.visibility='hidden'">
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap">
+    <p class="sec-tag">Find us</p>
+    <h2>Hours &amp; location</h2>
+    <div class="hours-grid">
+      <div>
+        <address>
+          5308 Hwy 7 #4<br>
+          Woodbridge, Vaughan, ON&nbsp; L4L 1T3
+        </address>
+        <p style="color:var(--muted);font-size:14px">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=43.778421,-79.599258" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </p>
+        <div class="amen">
+          <span>Free parking</span><span>Wi-Fi</span><span>Child-friendly</span><span>Loyalty program</span><span>Mobile service</span>
+        </div>
+      </div>
+      <table class="hours">
+        <tr><td>Monday</td><td>2:00 – 6:00 pm</td></tr>
+        <tr><td>Tuesday</td><td>12:00 – 4:00 pm<span class="split">5:00 – 8:00 pm</span></td></tr>
+        <tr><td>Wednesday</td><td>12:00 – 3:00 pm<span class="split">4:00 – 8:00 pm</span></td></tr>
+        <tr><td>Thursday</td><td>12:00 – 4:00 pm<span class="split">5:00 – 8:00 pm</span></td></tr>
+        <tr><td>Friday</td><td>10:00 am – 3:00 pm<span class="split">4:00 – 8:00 pm</span></td></tr>
+        <tr><td>Saturday</td><td>10:00 am – 3:00 pm<span class="split">4:00 – 8:00 pm</span></td></tr>
+        <tr><td>Sunday</td><td>2:00 – 6:00 pm</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Chair's open.</h2>
+    <p class="lead">Pick your barber, pick your time. Booking takes about thirty seconds.</p>
+    <a class="btn btn-primary" href="https://booksy.com/en-ca/4367_dope-fades_barbershop_958511_woodbridge" target="_blank" rel="noopener">Book on Booksy</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Dope Fades · 5308 Hwy 7 #4, Woodbridge, Vaughan ON ·
+    <a href="https://www.instagram.com/hairbydope_/" target="_blank" rel="noopener">@hairbydope_</a><br>
+    <span style="opacity:.6">Concept site by BIYISANDBOX STUDIOS — not affiliated with or authorised by Dope Fades.</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HairSalon",
+  "name":"DOPE FADES",
+  "description":"Barbershop and braiding studio in Woodbridge, Vaughan. Fades, line-ups, kids cuts, cornrows, locs and extensions.",
+  "address":{"@type":"PostalAddress","streetAddress":"5308 Hwy 7 #4","addressLocality":"Woodbridge","addressRegion":"ON","postalCode":"L4L 1T3","addressCountry":"CA"},
+  "geo":{"@type":"GeoCoordinates","latitude":43.778421,"longitude":-79.599258},
+  "priceRange":"CAD 30 - 200",
+  "currenciesAccepted":"CAD",
+  "sameAs":["https://www.instagram.com/hairbydope_/","https://booksy.com/en-ca/4367_dope-fades_barbershop_958511_woodbridge"],
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Sunday"],"opens":"14:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday"],"opens":"12:00","closes":"16:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday"],"opens":"17:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday"],"opens":"12:00","closes":"15:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Friday","Saturday"],"opens":"16:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"10:00","closes":"15:00"}
+  ]
+}
+</script>
+
+</body>
+</html>
