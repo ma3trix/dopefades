@@ -102,6 +102,33 @@ else
   cp -n assets/_original/*.jpeg assets/ 2>/dev/null || true
 fi
 
+# --- gallery pass ------------------------------------------------------------
+# The #work grid is auto-fit minmax(180px,1fr) inside a ~1100px wrap, so a cell
+# is never wider than ~355px. 1000px sources pushed the page over its 2 MB
+# budget for detail no one can see; 720px still covers a 2x display.
+GALLERY=(work-01 shop-03 work-02 work-03 shop-04 work-04 work-08 work-06 work-10 work-13 work-05 work-12)
+if command -v sips >/dev/null 2>&1; then
+  for b in "${GALLERY[@]}"; do
+    [[ -s "assets/_original/$b.jpeg" ]] || continue
+    sips -Z 720 -s format jpeg -s formatOptions 68 "assets/_original/$b.jpeg" \
+      --out "assets/$b.jpeg" >/dev/null 2>&1
+  done
+  printf '  ok    %-16s %s  (gallery pass: 12 images at 720px)\n' "gallery" \
+    "$(du -ch $(printf 'assets/%s.jpeg ' "${GALLERY[@]}") 2>/dev/null | tail -1 | cut -f1)"
+fi
+
+# --- hero override -----------------------------------------------------------
+# Booksy's own hero art is a 1108x623 promo crop on flat yellow: too soft for a
+# full-bleed background and it fights the dark gradient over it. shop-06 is a
+# 2340x2340 in-chair shot against the dark geometric wall, which is what the
+# gradient was built for. 1600px q68 — it sits under a 95%-to-55% dark gradient,
+# so extra fidelity is invisible and costs page weight. Delete to restore Booksy's.
+if [[ -s assets/_original/shop-06.jpeg ]] && command -v sips >/dev/null 2>&1; then
+  sips -Z 1600 -s format jpeg -s formatOptions 68 assets/_original/shop-06.jpeg \
+    --out assets/hero.jpeg >/dev/null 2>&1 \
+    && printf '  ok    %-16s %s  (hero override: shop-06)\n' hero.jpeg "$(du -h assets/hero.jpeg | cut -f1)"
+fi
+
 echo
 printf 'originals : %s files, %s\n' "$(ls -1 assets/_original 2>/dev/null | wc -l | tr -d ' ')" "$(du -sh assets/_original 2>/dev/null | cut -f1)"
 printf 'web-sized : %s files, %s\n' "$(ls -1 assets/*.jpeg 2>/dev/null | wc -l | tr -d ' ')" "$(du -ch assets/*.jpeg 2>/dev/null | tail -1 | cut -f1)"

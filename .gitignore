@@ -1,6 +1,32 @@
 .DS_Store
 
-# The shop's own photos, pulled from Booksy's CDN by fetch-assets.sh.
-# Not ours to redistribute — kept out of git until Dope Fades gives permission.
-assets/
+# Working copies: full-resolution originals and any Instagram pull. These stay
+# out of git — they are bulk, and nothing on the page references them.
 assets/_original/
+assets/_instagram/
+
+# The shop's own photos, pulled from Booksy's CDN by fetch-assets.sh.
+#
+# CHANGED 2026-09-05: previously the whole of assets/ was ignored, on the
+# grounds that these are not ours to redistribute. That is still true — but the
+# site was published to a public URL on 2026-09-05, and an image-less gallery
+# was showing a black gap to anyone who opened it. Malik's call: ship the 14
+# images the page actually references, and nothing else.
+#
+# If Dope Fades ever object, this is the line to revert: re-ignore assets/ and
+# the gallery goes quiet again on its own (every <img> has an onerror).
+assets/*.jpeg
+!assets/hero.jpeg
+!assets/shop.jpeg
+!assets/shop-03.jpeg
+!assets/shop-04.jpeg
+!assets/work-01.jpeg
+!assets/work-02.jpeg
+!assets/work-03.jpeg
+!assets/work-04.jpeg
+!assets/work-05.jpeg
+!assets/work-06.jpeg
+!assets/work-08.jpeg
+!assets/work-10.jpeg
+!assets/work-12.jpeg
+!assets/work-13.jpeg

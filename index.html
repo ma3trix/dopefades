@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
-  SPEC PITCH — NOT AUTHORISED, NOT DEPLOYED.
+  SPEC PITCH — NOT AUTHORISED. **DEPLOYED PUBLICLY 2026-09-05** at
+  https://ma3trix.github.io/dopefades/ (Malik's call). The "NOT DEPLOYED" this
+  line used to claim is no longer true, and the checklist below is now overdue
+  rather than pending: the page is live, the shop still has not been asked, and
+  the placeholder pricing in #units is publicly visible.
   Built 2026-09-03 from the public Booksy listing for DOPE FADES. The shop has
   not engaged BIYISANDBOX STUDIOS. Photos are the shop's own, pulled from
   Booksy's CDN for this mockup only.
@@ -86,7 +90,10 @@
 
   /* gallery */
   .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-  .gallery img,.gallery .ph{aspect-ratio:1;object-fit:cover;border-radius:12px;background:linear-gradient(135deg,#2b2723,#161412);border:1px solid var(--line)}
+  /* width:100% is load-bearing: a grid cell does not stretch a replaced element,
+     so a lazy <img> with no intrinsic size collapsed to 0x0, never entered the
+     viewport, and therefore never loaded. Fixed 2026-09-05. */
+  .gallery img,.gallery .ph{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:linear-gradient(135deg,#2b2723,#161412);border:1px solid var(--line)}
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
@@ -178,6 +185,16 @@
         <p>Same precision, patient chair. Child-friendly shop.</p>
         <span class="dur">1 hr</span>
       </div>
+      <div class="card">
+        <h3>Dope Fade &amp; Dye <span class="price">$119.99</span></h3>
+        <p>The signature cut with a full black dye through, finished in one sitting.</p>
+        <span class="dur">1 hr 45</span>
+      </div>
+      <div class="card">
+        <h3>Dope Fade &amp; Colour <span class="price">$139.99</span></h3>
+        <p>Cut plus custom colour — anything beyond black is matched at the chair.</p>
+        <span class="dur">2 hr</span>
+      </div>
     </div>
     <p class="note">Card, cash or tap. Loyalty program available in-shop.</p>
   </div>
@@ -227,9 +244,14 @@
         <span class="dur">By appointment</span>
       </div>
       <div class="card">
-        <h3>Unit Fitting <span class="price">Quoted</span></h3>
-        <p>Seamless, undetectable fit, cut and blended into your own hair on the day.</p>
+        <h3>Hair Unit <span class="price">$550</span></h3>
+        <p>Real human hair unit, fitted, cut and blended into your own hair on the day.</p>
         <span class="dur">Allow 2 hr+</span>
+      </div>
+      <div class="card">
+        <h3>Reinstall <span class="price">$250</span></h3>
+        <p>Lift, clean and refit your existing unit. Booked separately from a new fitting.</p>
+        <span class="dur">Allow 2 hr</span>
       </div>
       <div class="card">
         <h3>Colour <span class="price">From $60</span></h3>
@@ -237,10 +259,11 @@
         <span class="dur">1 hr 45+</span>
       </div>
     </div>
-    <!-- PRICING GAP: toupee/unit work is all over their Instagram (TOUPE/HAIRUNIT highlight,
-         "real human hair unit BEFORE AFTER" posts) but appears NOWHERE on their Booksy menu,
-         so no prices exist to quote. "Quoted" is a placeholder — get real numbers before
-         this is shown to them, or cut the section. Same for non-black colour. -->
+    <!-- RESOLVED 2026-09-05: the gap was in how the menu was read, not in the menu.
+         Booksy does list "Hair unit" ($550) and "Reinstall Hair unit" ($250) — both are
+         now on the cards above, so nothing here is a placeholder any more. Non-black
+         colour is still genuinely unpriced: Booksy lists Hair Dye (Black) $60, DOPE FADE
+         AND DYE $119.99 and DOPE FADE AND COLOUR $139.99, and nothing else. -->
     <p class="note">Prices for unit work are set at consultation — ask in the shop or by DM.</p>
   </div>
 </section>
@@ -251,14 +274,18 @@
     <h2>Straight from the chair</h2>
     <p class="lead">A few from the shop. Full gallery on Instagram.</p>
     <div class="gallery">
-      <img src="assets/work-01.jpeg" alt="Fade by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-02.jpeg" alt="Line up by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-03.jpeg" alt="Cornrows by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-04.jpeg" alt="Locs by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-05.jpeg" alt="Braids by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-06.jpeg" alt="Haircut by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-07.jpeg" alt="Styling by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
-      <img src="assets/work-08.jpeg" alt="Twists by Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-01.jpeg" alt="Skin fade, side profile — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/shop-03.jpeg" alt="Taper fade blended into natural curls — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-02.jpeg" alt="Bald fade, back of the head — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-03.jpeg" alt="Kids fade — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/shop-04.jpeg" alt="Curly top shaped and lined up in the chair — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-04.jpeg" alt="Straight-back cornrows — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-08.jpeg" alt="Designer cornrows with a carved part — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-06.jpeg" alt="Two-strand twists — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-10.jpeg" alt="Cornrows, close detail — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-13.jpeg" alt="Braided style, top view — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-05.jpeg" alt="Cornrows, side view — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
+      <img src="assets/work-12.jpeg" alt="Wig install with a sleek finish — Dope Fades" loading="lazy" onerror="this.style.visibility='hidden'">
     </div>
     <p class="note"><a href="https://www.instagram.com/dopefades_/" target="_blank" rel="noopener">@dopefades_ on Instagram →</a></p>
   </div>
