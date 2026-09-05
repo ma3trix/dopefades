@@ -30,6 +30,51 @@ also theirs, lifted from the listing bio.
 their Booksy schema, so hours and geo are structured correctly if this ever goes
 live.
 
+## Instagram — @dopefades_ (checked 2026-09-05)
+
+**Booksy's listed handle is wrong.** It points at `@hairbydope_`; the live account
+is [`@dopefades_`](https://www.instagram.com/dopefades_/) — 348 posts, 3,779
+followers — with `@dopefadestoronto` as a second handle. The site now links to
+`@dopefades_`.
+
+What the Instagram says that Booksy doesn't:
+
+- **Tagline is stronger there.** *"WE GUARANTEE YOUR BEST HAIRCUT EVER!"* — now
+  quoted in the hero. Booksy's "if you cherish your look, value your time" is the
+  about heading.
+- **They do toupees and hair units, and it is not on the Booksy menu at all.**
+  There's a `TOUPE/HAIRUNIT` story highlight and repeated posts — *"Get a fitting
+  toupee, seamless and undetectable"*, *"Real human hair unit BEFORE AFTER"*,
+  free consultation by DM. This is a whole revenue line with no online booking
+  path. New `#units` section on the page covers it. **No prices exist for it** —
+  the cards say "Quoted" and there's an HTML comment flagging that.
+- **Colour is bigger than Booksy suggests.** A `COLOUR` highlight and colour
+  posts, against a single "Hair Dye (Black) $60" line on Booksy.
+- **The braiding side is co-branded.** `@shinbraidsandlocs` is Shin's own handle.
+  Other barbers post under `@slattysnips`, `@fades_byshhhhhh`, `@_fadeverse_`,
+  `@j.buoy`.
+
+### The Instagram photos could not be downloaded
+
+Not a permission problem — a technical one, and it will not be solved by retrying:
+
+| Route | Why it fails |
+|---|---|
+| Server-side fetch | The build sandbox has no network route to Instagram, and Instagram blocks non-browser clients anyway |
+| Read the image URLs from the page | Instagram CDN URLs are signed and expire within hours; the browser tooling redacts them as credential-bearing |
+| Read pixels off a canvas | Works — the images aren't CORS-tainted — but the tooling redacts base64 image payloads |
+| Right-click → Save As | Browsers are read-only to the desktop-control tooling |
+
+**So `assets/` gets filled by `fetch-assets.sh` (Booksy) only.** Those 26 photos
+are the same shop, the same work, unsigned URLs, full resolution — they are the
+better source regardless.
+
+If you specifically want the Instagram set, the options are: save them by hand
+from your own browser, run a dedicated tool locally (`gallery-dl
+"https://www.instagram.com/dopefades_/"`), or — the right answer for a real
+engagement — **ask the shop for the originals.** Instagram re-compresses
+everything; the files on the barbers' phones are better than anything scraped.
+
 ## Four things to fix before this is shown to anyone
 
 1. **Photo permission.** `assets/` is gitignored and the images are the shop's

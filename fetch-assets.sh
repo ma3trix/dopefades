@@ -12,6 +12,12 @@
 #   https://booksy.com/en-ca/4367_dope-fades_barbershop_958511_woodbridge
 # Captured 2026-09-03. Booksy rotates these keys — if you get 403/404, re-scrape
 # the listing for fresh URLs.
+#
+# NOTE: Instagram (@dopefades_) is deliberately NOT covered here. Its CDN URLs are
+# signed and expire within hours, so any list baked into this script would be dead
+# before you ran it. See README.md → "The Instagram photos could not be downloaded".
+# To get those: gallery-dl "https://www.instagram.com/dopefades_/" — or just ask the
+# shop for the originals, which beat anything Instagram re-compressed.
 
 set -euo pipefail
 cd "$(dirname "$0")"
