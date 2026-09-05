@@ -54,6 +54,27 @@ What the Instagram says that Booksy doesn't:
   Other barbers post under `@slattysnips`, `@fades_byshhhhhh`, `@_fadeverse_`,
   `@j.buoy`.
 
+### Why no images are committed (verified 2026-09-05)
+
+Two independent reasons, and only the second is a judgement call:
+
+**The build sandbox cannot reach either CDN.** Its egress proxy
+(`localhost:3128`) enforces a domain allowlist — `pypi.org` returns 200,
+`cloudfront.net` returns 000. DNS appears to "fail" locally only because the
+proxy does the resolving. Browsers *can* load the images, and a canvas read of
+a Booksy photo produced a valid JPEG, but the tooling redacts binary payloads
+at the tool boundary, so the bytes can never land on disk. **Your Mac has none
+of these restrictions** — `./fetch-assets.sh` just works there.
+
+**The photos are Dope Fades' property.** `assets/` and `assets/_original/` are
+gitignored deliberately, and stay that way until permission exists.
+
+All 28 Booksy URLs were re-verified 200 on 2026-09-05 — 9.8 MB of originals,
+most of them 2340×2340. That is far too heavy to ship, so the script now
+downloads to `assets/_original/` and generates 1000px q70 copies into
+`assets/` using `sips` (built into macOS, nothing to install). Expect roughly
+1.5 MB of web-sized output.
+
 ### The Instagram photos could not be downloaded
 
 Not a permission problem — a technical one, and it will not be solved by retrying:
